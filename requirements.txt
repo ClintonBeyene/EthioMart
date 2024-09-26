@@ -1,0 +1,29 @@
+# Data Ingestion and Preprocessing
+pandas
+numpy
+requests
+beautifulsoup4
+lxml
+
+# Text Processing
+nltk
+spacy
+transformers
+sentencepiece
+
+# Machine Learning and NER
+scikit-learn
+torch
+datasets
+seqeval
+
+# Model Training and Evaluation
+huggingface-hub
+accelerate
+
+# Model Interpretability
+shap
+lime
+
+# Miscellaneous
+tqdm
