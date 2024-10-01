@@ -11,7 +11,7 @@ b_product_items = [
 ]
 
 # List of I-LOC items
-i_loc_items = ['መገናኛ', 'ዘፍመሽ']
+i_loc_items = ['መገናኛ', 'ዘፍመሽ', 'ግራንድ', 'ሞል', '3ኛ ፎቅ', '376']
 
 # List of B-LOC items
 b_loc_items = ['አዲስ አበባ']
@@ -22,6 +22,10 @@ def label_message_utf8_with_birr(message):
     previous_tokens = []
 
     for i, token in enumerate(tokens):
+        # Skip unnecessary tokens
+        if token in ['.', '/', './']:
+            continue
+
         # Check if token is a price (e.g., 500 ETB, $100, or ብር)
         if re.match(r'^\d{10,}$', token):
             labeled_tokens.append(f"{token} O")  # Label as O for "other" or outside of any entity
@@ -61,6 +65,3 @@ def label_message_utf8_with_birr(message):
             previous_tokens.pop(0)
 
     return "\n".join(labeled_tokens)
-
-
-
